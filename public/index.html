@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicidad · Motor de plantillas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="panel">
+    <h1 class="banner">Publicidad</h1>
+
+    <div class="user">Username: <span id="userLabel">ejemplo</span></div>
+
+    <form id="form" class="row" autocomplete="off">
+      <label for="username">Username</label>
+      <input id="username" class="block" value="" maxlength="30">
+    </form>
+
+    <form id="msgForm" class="row" autocomplete="off">
+      <label for="mensaje">Mensaje</label>
+      <input id="mensaje" class="block" placeholder="Ingrese el mensaje" maxlength="500">
+      <button class="send" type="submit">Enviar</button>
+    </form>
+
+    <section class="preview" aria-live="polite">
+      <div id="output" class="output"></div>
+      <ul id="history" class="history"></ul>
+    </section>
+
+    <details class="tpl">
+      <summary>Editar plantilla</summary>
+      <textarea id="template" rows="4" spellcheck="false"></textarea>
+      <p class="hint">Usa <code>{{username}}</code>, <code>{{mensaje}}</code> y <code>{{hora}}</code>.</p>
+    </details>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
